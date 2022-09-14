@@ -12,19 +12,19 @@ import 'package:flutter_app/components/calendar_compo.dart';
 import 'my_home_page.dart';
 
 class CalendarPage extends StatefulWidget {
-  const CalendarPage({Key key}) : super(key: key);
+  const CalendarPage({Key? key}) : super(key: key);
 
   @override
   State<CalendarPage> createState() => _CalendarPageState();
 }
 
 class _CalendarPageState extends State<CalendarPage> {
-  DateTime _selectedDay;
+  DateTime? _selectedDay;
   DateTime _focusedDay = DateTime.now();
-  String user_id;
+  String? user_id;
 
   _getdata() async {
-    FirebaseAuth.instance.authStateChanges().listen((User user) {
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
       user_id = user?.email;
       if (user != null) {
         print(user.uid);
