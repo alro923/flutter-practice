@@ -4,8 +4,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingPage extends StatefulWidget {
-  final DatabaseReference databaseReference;
-  final String id;
+  final DatabaseReference? databaseReference;
+  final String? id;
 
   SettingPage({this.databaseReference, this.id});
 

@@ -4,9 +4,9 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:sqflite/sqflite.dart';
 
 class FriendsPage extends StatefulWidget {
-  final DatabaseReference databaseReference;
-  final Future<Database> db;
-  final String id;
+  final DatabaseReference? databaseReference;
+  final Future<Database>? db;
+  final String? id;
 
   FriendsPage({this.databaseReference, this.db, this.id});
 

@@ -7,17 +7,17 @@ import 'package:image_picker/image_picker.dart';
 import 'database_key.dart';
 
 class CameraPage extends StatefulWidget {
-  const CameraPage({Key key}) : super(key: key);
+  const CameraPage({Key? key}) : super(key: key);
 
   @override
   State<CameraPage> createState() => _CameraPageState();
 }
 
 class _CameraPageState extends State<CameraPage> {
-  File _image;
+  File? _image;
   final picker = ImagePicker();
-  FirebaseDatabase database = FirebaseDatabase.instance;
-  DatabaseReference reference;
+  FirebaseDatabase? database = FirebaseDatabase.instance;
+  DatabaseReference? reference;
 
   List<Boggle> glegle = new List.empty(growable: true);
   @override
@@ -28,7 +28,7 @@ class _CameraPageState extends State<CameraPage> {
   Future getImage(ImageSource imageSource) async {
     final image = await picker.pickImage(source: imageSource);
     setState(() {
-      _image = File(image.path);
+      _image = File(image!.path);
     });
   }
 
@@ -40,7 +40,7 @@ class _CameraPageState extends State<CameraPage> {
         child: Center(
             child: _image == null
                 ? const Text('No image selected.')
-                : Image.file(File(_image.path))));
+                : Image.file(File(_image!.path))));
   }
 
   @override

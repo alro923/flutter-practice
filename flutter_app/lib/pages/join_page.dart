@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'login_page.dart';
 
 class JoinPage extends StatefulWidget {
-  const JoinPage({Key key}) : super(key: key);
+  const JoinPage({Key? key}) : super(key: key);
 
   @override
   State<JoinPage> createState() => _JoinPageState();
@@ -31,8 +31,8 @@ class _JoinPageState extends State<JoinPage> {
         border: OutlineInputBorder(),
         labelText: '이메일',
       ),
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           // == null or isEmpty
           return '이메일을 입력해주세요.';
         }
@@ -49,8 +49,8 @@ class _JoinPageState extends State<JoinPage> {
         border: OutlineInputBorder(),
         labelText: '이름',
       ),
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           // == null or isEmpty
           return '이름을 입력해주세요.';
         }
@@ -67,8 +67,8 @@ class _JoinPageState extends State<JoinPage> {
         border: OutlineInputBorder(),
         labelText: '닉네임',
       ),
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           // == null or isEmpty
           return '닉네임을 입력해주세요.';
         }
@@ -86,8 +86,8 @@ class _JoinPageState extends State<JoinPage> {
         border: OutlineInputBorder(),
         labelText: '비밀번호',
       ),
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           // == null or isEmpty
           return '비밀번호를 입력해주세요.';
         }
@@ -156,7 +156,7 @@ class _JoinPageState extends State<JoinPage> {
           .createUserWithEmailAndPassword(
               email: _emailController.text, password: _passwordController.text)
           .then((value) {
-        if (value.user.email == null) {
+        if (value.user!.email == null) {
         } else {
           Navigator.pop(context);
         }

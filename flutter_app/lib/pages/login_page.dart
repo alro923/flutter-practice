@@ -6,7 +6,7 @@ import 'calendar_page.dart';
 import 'join_page.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key key}) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -29,8 +29,8 @@ class _LoginPageState extends State<LoginPage> {
         border: OutlineInputBorder(),
         labelText: '이메일',
       ),
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           // == null or isEmpty
           return '이메일을 입력해주세요.';
         }
@@ -48,8 +48,8 @@ class _LoginPageState extends State<LoginPage> {
         border: OutlineInputBorder(),
         labelText: '비밀번호',
       ),
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           // == null or isEmpty
           return '비밀번호를 입력해주세요.';
         }
@@ -115,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
 
   _login() async {
     //키보드 숨기기
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       FocusScope.of(context).requestFocus(FocusNode());
 
       // Firebase 사용자 인증, 사용자 등록
