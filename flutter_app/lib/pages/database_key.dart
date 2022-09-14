@@ -2,7 +2,7 @@ import '../utils.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class Boggle {
-  String key;
+  String? key;
   final int boggle;
   final String date;
 

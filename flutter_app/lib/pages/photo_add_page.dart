@@ -13,7 +13,7 @@ class PhotoAddPage extends StatefulWidget {
 }
 
 class _PhotoAddPageState extends State<PhotoAddPage> {
-  TextEditingController titleController;
+  TextEditingController? titleController;
 
   @override
   Widget build(BuildContext context) {
