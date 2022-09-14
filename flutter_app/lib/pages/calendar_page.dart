@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 
 import 'package:flutter_app/components/calendar_compo.dart';
 import 'my_home_page.dart';
+import 'camera_page.dart';
 
 class CalendarPage extends StatefulWidget {
   const CalendarPage({Key? key}) : super(key: key);
@@ -60,6 +61,13 @@ class _CalendarPageState extends State<CalendarPage> {
       body: Column(
         children: [
           CalendarCom(),
+          ElevatedButton(
+            child: const Text('카메라 페이지로 이동'),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const CameraPage()));
+            },
+          )
           //_getdata(),<- 이거 문제임
         ],
       ),
